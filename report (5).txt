@@ -1,0 +1,136 @@
+\documentclass{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{lipsum} % For dummy text, you can remove this package
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+% Custom Color Scheme
+\definecolor{primarycolor}{RGB}{26, 115, 232}
+\definecolor{secondarycolor}{RGB}{231, 76, 60}
+\definecolor{accentcolor}{RGB}{0, 166, 90}
+
+% Section Formatting
+\titleformat{\section}
+{\color{primarycolor}\normalfont\Large\bfseries}
+{}{0em}{}
+\titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip}
+
+\titleformat{\subsection}
+{\color{secondarycolor}\normalfont\large\bfseries}
+{}{0em}{}
+\titlespacing*{\subsection}{0pt}{\baselineskip}{0.5\baselineskip}
+
+% Custom Table of Contents Formatting
+\contentsmargin{0cm}
+\titlecontents{section}[0pt]
+{\color{primarycolor}\bfseries\large}
+{\contentslabel{2em}}
+{}
+{\hfill\color{primarycolor}\contentspage}
+
+\titlecontents{subsection}[2em]
+{\color{secondarycolor}\small}
+{\contentslabel{2.5em}}
+{}
+{\titlerule*[0.5pc]{.}\contentspage}
+
+% Fancy Header
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=2cm]{university_logo.png}}
+\renewcommand{\headrulewidth}{0pt}
+
+% Title Page
+\title{
+    \begin{tikzpicture}[remember picture,overlay]
+        \fill[primarycolor] (current page.south west) rectangle ([xshift=4cm]current page.north west);
+        \node[anchor=west, white, xshift=0.5cm, yshift=-1.8cm] at (current page.north west) {\Huge\bfseries\sffamily Your Report Title};
+        \node[anchor=west, white, xshift=0.5cm, yshift=-3.5cm] at (current page.north west) {\Large\sffamily Your Name};
+        \node[anchor=west, white, xshift=0.5cm, yshift=-4.8cm] at (current page.north west) {\large\sffamily Date: \today};
+    \end{tikzpicture}
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% Sections
+\section{Introduction}
+\lipsum[1-2] % Replace with your actual content
+
+\section{Methodology}
+\lipsum[3] % Replace with your actual content
+
+\subsection{Data Collection}
+\lipsum[4] % Replace with your actual content
+
+\subsection{Data Analysis}
+\lipsum[5] % Replace with your actual content
+
+% Figures
+\section{Results}
+\lipsum[6] % Replace with your actual content
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{result_plot.png}
+    \caption{Result plot}
+    \label{fig:result}
+\end{figure}
+
+Figure \ref{fig:result} shows the result plot obtained from the experiment.
+
+% Tables
+\section{Discussion}
+\lipsum[7] % Replace with your actual content
+
+\begin{table}[htb]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Parameter} & \textbf{Value} \\
+        \hline
+        A & 10 \\
+        B & 20 \\
+        \hline
+    \end{tabular}
+    \caption{Experimental Parameters}
+    \label{table:params}
+\end{table}
+
+Table \ref{table:params} lists the experimental parameters used in the study.
+
+% Equations
+\section{Conclusion}
+\lipsum[8] % Replace with your actual content
+
+The equation for calculating the energy is given by:
+
+\begin{equation}
+    E = mc^2
+    \label{eq:energy}
+\end{equation}
+
+Equation \ref{eq:energy} represents the famous mass-energy equivalence.
+
+% References
+\begin{thebibliography}{9}
+    \bibitem{ref1} Author. (Year). Title of the article. \textit{Journal Name}, \textit{Volume}(Issue), Page numbers. DOI/URL.
+    % Add more references as needed
+\end{thebibliography}
+
+\end{document}

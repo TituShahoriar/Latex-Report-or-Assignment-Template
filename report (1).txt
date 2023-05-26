@@ -1,0 +1,60 @@
+\documentclass{report}
+
+% Packages
+\usepackage{graphicx}
+\usepackage{lipsum} % For dummy text, you can remove this package
+\usepackage{hyperref}
+
+% Title Page
+\newcommand{\universitylogo}{\includegraphics[width=0.3\textwidth]{university_logo.png}}
+\newcommand{\reporttitle}{Your Report Title}
+\newcommand{\course}{Course Name}
+\newcommand{\supervisor}{Supervisor Name}
+\newcommand{\groupdetails}{Group Details}
+\newcommand{\groupcontribution}{Group Contribution}
+
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    \universitylogo\\
+    \vspace{1cm}
+    \textbf{\Huge \reporttitle}\\
+    \vspace{1cm}
+    \textbf{\Large \course}\\
+    \vspace{2cm}
+    \textbf{Supervisor:} \supervisor\\
+    \vspace{1cm}
+    \textbf{Group Details:} \groupdetails\\
+    \vspace{1cm}
+    \textbf{Group Contribution:} \groupcontribution\\
+    \vfill
+    \textbf{\large Date: \today}
+\end{titlepage}
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% Sections
+\section{Introduction}
+\lipsum[1-2] % Replace with your actual content
+
+\subsection{Background}
+\lipsum[3] % Replace with your actual content
+
+\subsection{Objectives}
+\lipsum[4] % Replace with your actual content
+
+\section{Methodology}
+\lipsum[5-6] % Replace with your actual content
+
+% References
+\begin{thebibliography}{9}
+    \bibitem{ref1} Author. (Year). Title of the article. \textit{Journal Name}, \textit{Volume}(Issue), Page numbers. DOI/URL.
+    % Add more references as needed
+\end{thebibliography}
+
+\end{document}
